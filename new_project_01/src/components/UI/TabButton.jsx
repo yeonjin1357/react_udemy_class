@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import classes from "./TabButton.module.css";
 
 const TabButton = (props) => {
-  const buttonClickHandler = () => {};
+  const buttonClickHandler = () => {
+    console.log("click");
+  };
 
   return (
     <li>
