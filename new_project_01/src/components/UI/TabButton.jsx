@@ -3,7 +3,7 @@ import classes from "./TabButton.module.css";
 
 const TabButton = (props) => {
   const buttonClickHandler = () => {
-    console.log("click");
+    console.log("click add");
   };
 
   return (
