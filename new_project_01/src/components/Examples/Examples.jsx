@@ -6,7 +6,7 @@ import { EXAMPLES } from "../../data";
 import classes from "./Examples.module.css";
 
 const Examples = () => {
-  const [selectedTopic, setSelectedTopic] = useState("components");
+  const [selectedTopic, setSelectedTopic] = useState();
 
   const ExamplesList = ["Components", "JSX", "Props", "State"];
 
@@ -20,10 +20,10 @@ const Examples = () => {
       <h2>Examples</h2>
       <menu>
         {ExamplesList.map((item, index) => (
-          <TabButton key={index} onSelect={() => handleSelect(item)} title={item}></TabButton>
+          <TabButton key={index} onSelect={() => handleSelect(item)} title={item} isActive={selectedTopic === item.toLowerCase()}></TabButton>
         ))}
       </menu>
-      <TabContent title={EXAMPLES[selectedTopic].title} description={EXAMPLES[selectedTopic].description} code={EXAMPLES[selectedTopic].code}></TabContent>
+      {selectedTopic && EXAMPLES[selectedTopic] ? <TabContent selectedTopic={selectedTopic} title={EXAMPLES[selectedTopic].title} description={EXAMPLES[selectedTopic].description} code={EXAMPLES[selectedTopic].code}></TabContent> : <p>Please select a topic.</p>}
     </section>
   );
 };
