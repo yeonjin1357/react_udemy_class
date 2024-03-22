@@ -1,8 +1,8 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useRef, useState } from "react";
 
-import { ChallengesContext } from '../store/challenges-context.jsx';
-import Modal from './Modal.jsx';
-import images from '../assets/images.js';
+import { ChallengesContext } from "../store/challenges-context.jsx";
+import Modal from "./Modal.jsx";
+import images from "../assets/images.js";
 
 export default function NewChallenge({ onDone }) {
   const title = useRef();
@@ -25,12 +25,7 @@ export default function NewChallenge({ onDone }) {
       image: selectedImage,
     };
 
-    if (
-      !challenge.title.trim() ||
-      !challenge.description.trim() ||
-      !challenge.deadline.trim() ||
-      !challenge.image
-    ) {
+    if (!challenge.title.trim() || !challenge.description.trim() || !challenge.deadline.trim() || !challenge.image) {
       return;
     }
 
@@ -58,11 +53,7 @@ export default function NewChallenge({ onDone }) {
 
         <ul id="new-challenge-images">
           {images.map((image) => (
-            <li
-              key={image.alt}
-              onClick={() => handleSelectImage(image)}
-              className={selectedImage === image ? 'selected' : undefined}
-            >
+            <li key={image.alt} onClick={() => handleSelectImage(image)} className={selectedImage === image ? "selected" : undefined}>
               <img {...image} />
             </li>
           ))}
