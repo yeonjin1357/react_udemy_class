@@ -19,7 +19,7 @@ export default function Header() {
       <AnimatePresence>{isCreatingNewChallenge && <NewChallenge onDone={handleDone} />}</AnimatePresence>
       <header id="main-header">
         <h1>Your Challenges</h1>
-        <motion.button whileHover={{ scale: 1.1 }} transition={{ type: "spring" }} onClick={handleStartAddNewChallenge} className="button">
+        <motion.button whileHover={{ scale: 1.1, background: "#8b110f" }} transition={{ type: "spring" }} onClick={handleStartAddNewChallenge} className="button">
           Add Challenge
         </motion.button>
       </header>
